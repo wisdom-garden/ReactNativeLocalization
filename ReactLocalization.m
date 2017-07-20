@@ -36,7 +36,7 @@
 -(NSString*) getCurrentLanguage{
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10")) {
         NSLocale* currentLocale = [NSLocale currentLocale];
-        return [NSString stringWithFormat:@"%@-%@", currentLocale.languageCode, currentLocale.countryCode];
+        return [NSString stringWithFormat:@"%@", currentLocale.localeIdentifier];
     }
     return [[NSLocale preferredLanguages] objectAtIndex:0];
 }
